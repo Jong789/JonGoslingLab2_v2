@@ -4,38 +4,37 @@
 
 // main() runs in its own thread in the OS
 
+// n=1 gives 0
+// n=2 gives 1
+// n=3 gives 1
+// n=4 gives 2
+
+// Recursive function is a function that references itself
+
+int fib(int n) {
+    if(n==1)
+        return 0;
+    if(n==2)
+        return 1;
+    else
+        return (fib(n-1) + (fib(n-2)));
+}
+
+
+
 int main()
 {
 
-    printf("Fibonacci numbers using simple loop \r\n");
+    printf("Fibonacci numbers using a recursive function \r\n");
 
-// define variables
+    int max_term = 10;
+    for(int i=1; i<=max_term; i++){
+        printf("%d, ", fib(i));
+ 
+       }
+    printf ("\r\n");
+    while (true) {
 
-    int final_term = 10;
-    int term1 = 0;
-    int term2 = 1;
-    int nextterm = 0;
-
-    // write loop to output first 2 terms and to calculate the remaining terms up to 10 terms
-
-    for(int i=1; i<final_term; i++)
-    
-    {
-
-        if(i==1)
-        printf("%d \n",term1);
-        if(i==2)
-        printf("%d \n",term2);
-        
-        else
-        {
-
-            nextterm = term1 + term2;
-            term1 = term2;
-            term2 = nextterm;
-            printf("%d \n", nextterm);
-
-        }
     }
 
 }
